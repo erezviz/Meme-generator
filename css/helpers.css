@@ -1,0 +1,15 @@
+* {
+    box-sizing: border-box;
+}
+
+.grid {
+    display: grid;
+}
+
+.hide {
+    display: none;
+}
+
+.flex {
+    display: flex;
+}

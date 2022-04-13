@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/styles.css">
     <title>Memeoo | Erez Wiezel</title>
 </head>
 
@@ -23,21 +23,22 @@
 
     <main>
 
-        <section class="gallery-container"></section>
-        <section class="meme-editor">
-            <canvas id="meme-canvas" width="500" height="500"></canvas>
-            <div class="controls">
-                <button class="btn1">+</button>
-                <button class="btn2">-</button>
-                <button class="btn3">=</button>
-            </div>
+        <section class="gallery-container grid">
+            <img class="img1" onclick="onImgSelect(this)" data-img="1" src="meme-imgs-square/1.jpg" alt="">
+            <img class="img2" onclick="onImgSelect(this)" data-img="2" src="meme-imgs-square/2.jpg" alt="">
+            <img class="img2" onclick="onImgSelect(this)" data-img="2" src="meme-imgs-square/2.jpg" alt="">
+            <img class="img2" onclick="onImgSelect(this)" data-img="2" src="meme-imgs-square/2.jpg" alt="">
+
         </section>
+        <section class="meme-editor hide"></section>
+
     </main>
 
 
     <script src="js/storage.service.js"></script>
     <script src="js/meme.service.js"></script>
     <script src="js/meme.controller.js"></script>
+    <script src="js/gallery.controller.js"></script>
     <script src="js/main.js"></script>
 </body>
 

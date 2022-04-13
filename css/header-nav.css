@@ -1,0 +1,28 @@
+header {
+    margin: 0 auto;
+    background-color: aliceblue;
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    height: 1em;
+    width: 275px;
+}
+
+header nav ul li {
+    display: flex;
+    justify-self: center;
+    align-self: center;
+    height: 1em;
+    width: 5em;
+    color: rgb(68, 95, 95);
+}
+
+header nav ul li:hover {
+    color: rgba(68, 95, 95, 0.457);
+    cursor: pointer;
+}

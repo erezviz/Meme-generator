@@ -1,0 +1,19 @@
+main .gallery-container {
+    background-color: antiquewhite;
+    height: 80vh;
+    width: 100%;
+}
+
+main .gallery-container.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    grid-gap: 2px;
+    justify-content: center;
+}
+
+main .gallery-container>* {
+    /* display: flex; */
+    width: 10em;
+    justify-content: center;
+    align-items: center;
+}

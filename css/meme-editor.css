@@ -1,0 +1,49 @@
+.meme-editor {
+    justify-content: space-around;
+    align-items: center;
+    height: 34.375rem;
+    /* POSSIBLE USE FOR MOBILE \/ */
+    /* height: 53.125em; */
+    /* min-width: 34.375rem; */
+    min-width: 60em;
+    background-color: rgb(30, 123, 205);
+    border-radius: 5px;
+}
+
+main .meme-editor canvas {
+    background-color: #f8f8f8;
+}
+
+main .meme-editor .controls {
+    display: grid;
+    width: 20%;
+    grid-template: 1fr/repeat(5, 1fr);
+    grid-gap: 10px;
+    padding: 5px;
+    justify-items: center;
+    align-self: center;
+}
+
+.btn2 {
+    grid-column: -4;
+}
+
+.btn3 {
+    grid-column: -2;
+}
+
+.control-box .move-left::before {
+    content: '⬅️';
+}
+
+.control-box .move-up::before {
+    content: '⬆️';
+}
+
+.control-box .move-down::before {
+    content: '⬇️';
+}
+
+.control-box .move-right::before {
+    content: '➡️';
+}
