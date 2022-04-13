@@ -1,0 +1,73 @@
+* {
+    box-sizing: border-box;
+}
+
+header {
+    margin: 0 auto;
+    background-color: aliceblue;
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    height: 1em;
+    width: 275px;
+}
+
+header nav ul li {
+    display: flex;
+    justify-self: center;
+    align-self: center;
+    height: 1em;
+    width: 5em;
+    color: rgb(68, 95, 95);
+}
+
+header nav ul li:hover {
+    color: rgba(68, 95, 95, 0.457);
+    cursor: pointer;
+}
+
+main {
+    height: 90vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+main .meme-editor {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 34.375rem;
+    /* height: 53.125em; */
+    /* min-width: 34.375rem; */
+    min-width: 60em;
+    background-color: rgb(30, 123, 205);
+    border-radius: 5px;
+}
+
+main .meme-editor canvas {
+    background-color: #f8f8f8;
+}
+
+main .meme-editor .controls {
+    display: grid;
+    width: 20%;
+    grid-template: 1fr/repeat(5, 1fr);
+    grid-gap: 10px;
+    padding: 5px;
+    justify-items: center;
+    align-self: center;
+}
+
+.btn2 {
+    grid-column: -4;
+}
+
+.btn3 {
+    grid-column: -2;
+}
