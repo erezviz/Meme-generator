@@ -1,9 +1,9 @@
 'use strict'
 const IMG_KEY = 'imagesDB'
-let gImgs = [{ id: 1, url: 'img/1.jpg', keywords: ['funny', 'cat'] }]
+let gImgs = [{ id: 1, url: 'meme-imgs-square/1.jpg', keywords: ['funny', 'cat'] }]
 let gMeme = {
-    selecttedImgId: 5,
-    selecttedLineIdx: 0
+    selectedImgId: 1,
+    selectedLineIdx: 0
 }
 const ImageCount = 18
 
@@ -18,3 +18,7 @@ const ImageCount = 18
 
 //     }
 // }
+
+function getMeme() {
+    return gMeme
+}

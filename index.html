@@ -9,7 +9,7 @@
     <title>Memeoo | Erez Wiezel</title>
 </head>
 
-<body>
+<body onload="onInit()">
     <header>
         <h1 class="logo">Memeoo</h1>
         <nav>
@@ -22,14 +22,15 @@
     </header>
 
     <main>
+
         <section class="gallery-container"></section>
         <section class="meme-editor">
-            <!-- <canvas width="500" height="500"></canvas>
-                <div class="controls">
-                    <button class="btn1">+</button>
-                    <button class="btn2">-</button>
-                    <button class="btn3">=</button>
-                </div> -->
+            <canvas id="meme-canvas" width="500" height="500"></canvas>
+            <div class="controls">
+                <button class="btn1">+</button>
+                <button class="btn2">-</button>
+                <button class="btn3">=</button>
+            </div>
         </section>
     </main>
 
