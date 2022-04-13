@@ -31,6 +31,10 @@ header nav ul li:hover {
     cursor: pointer;
 }
 
+.elhanan {
+    width: 100px;
+}
+
 main {
     height: 90vh;
     display: flex;
