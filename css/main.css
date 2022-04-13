@@ -4,3 +4,7 @@ main {
     justify-content: center;
     align-items: center;
 }
+
+.selected {
+    box-shadow: inset 0px -6px 0 grey;
+}

@@ -12,12 +12,37 @@ let gMeme = {
     selectedImgId: 3,
     selectedLineIdx: 0,
     lines: [{
-        txt: 'I sometimes eat Falafel',
-        size: 20,
-        align: 'center',
-        color: 'red'
-    }]
+            txt: 'F*** THAT',
+            size: 20,
+            align: 'center',
+            color: 'red'
+        },
+        {
+            txt: 'Friends forever',
+            size: 10,
+            align: 'center',
+            color: 'blue'
+        },
+        {
+            txt: 'It\'s Shnatz time',
+            size: 20,
+            align: 'center',
+            color: 'red'
+        },
+        {
+            txt: 'When coding in sprint',
+            size: 15,
+            align: 'center',
+            color: 'red'
+        },
+    ]
 }
+
+function setImg(imgId, idx) {
+    gMeme.selectedImgId = imgId
+    gMeme.selectedLineIdx = idx
+}
+
 
 function setLineTxt(newTxt) {
     const meme = getMeme()
@@ -35,6 +60,10 @@ function setLineTxt(newTxt) {
 //     }
 // }
 
+function getMemeLines() {
+    return gMeme.lines[gMeme.selectedLineIdx]
+}
+
 function getMeme() {
     return {
         info: gMeme.lines[gMeme.selectedLineIdx],
@@ -44,4 +73,8 @@ function getMeme() {
 
 function _getImgById(imgId) {
     return gImgs.find(img => img.id === imgId)
+}
+
+function getImgs() {
+    return gImgs
 }

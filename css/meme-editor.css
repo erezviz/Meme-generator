@@ -5,7 +5,7 @@
     /* POSSIBLE USE FOR MOBILE \/ */
     /* height: 53.125em; */
     /* min-width: 34.375rem; */
-    min-width: 60em;
+    width: 100%;
     background-color: rgb(30, 123, 205);
     border-radius: 5px;
 }

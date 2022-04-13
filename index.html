@@ -14,23 +14,19 @@
         <h1 class="logo">Memeoo</h1>
         <nav>
             <ul>
-                <li>Gallery</li>
-                <li>Memes</li>
-                <li>About</li>
+                <!-- $$$$$$$   THIS DOESNT WORK, FIX IT    $$$$$$$-->
+                <li class="nav-select selected" onclick="onRender(this.textContent)">Gallery</li>
+                <li class="nav-select memes">Memes</li>
+                <li class="nav-select">About</li>
             </ul>
         </nav>
     </header>
 
     <main>
 
-        <section class="gallery-container grid">
-            <img class="img1" onclick="onImgSelect(this)" data-img="1" src="meme-imgs-square/1.jpg" alt="">
-            <img class="img2" onclick="onImgSelect(this)" data-img="2" src="meme-imgs-square/2.jpg" alt="">
-            <img class="img2" onclick="onImgSelect(this)" data-img="2" src="meme-imgs-square/2.jpg" alt="">
-            <img class="img2" onclick="onImgSelect(this)" data-img="2" src="meme-imgs-square/2.jpg" alt="">
+        <section class="gallery-container"></section>
 
-        </section>
-        <section class="meme-editor hide"></section>
+        <section class="meme-container"></section>
 
     </main>
 
