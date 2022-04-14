@@ -14,8 +14,8 @@
         <h1 class="logo">Memeoo</h1>
         <nav>
             <ul>
-                <!-- $$$$$$$   THIS DOESNT WORK, FIX IT    $$$$$$$-->
-                <li class="nav-select selected" onclick="onRender(this.textContent)">Gallery</li>
+                <!-- $$$$$$$   FOUND A FIX!! HORRAY!!!   $$$$$$$-->
+                <li class="nav-select" onclick="onPageChange(this.textContent)">Gallery</li>
                 <li class="nav-select memes">Memes</li>
                 <li class="nav-select">About</li>
             </ul>
@@ -26,7 +26,25 @@
 
         <section class="gallery-container"></section>
 
-        <section class="meme-container"></section>
+        <section class="meme-container">
+            <div class="meme-editor hide">
+
+                <canvas id="meme-canvas" width="500" height="500"></canvas>
+
+                <div class="control-box">
+                    <label for="text">
+                        <input oninput="onTxtChange(this.value)" type="text" placeholder="Write meme here">
+                    </label>
+                    <input oninput="onColorInput(this.value)" type="color" name="txt-color" />
+                    <button onclick="onFontChange(5)" class="increase-font">A</button>
+                    <button onclick="onFontChange(-5)" class="decrease-font">A</button>
+                    <button onclick="onSwitch(this)" class="switch-line">switch-line</button>
+
+                </div>
+            </div>
+
+            `
+        </section>
 
     </main>
 

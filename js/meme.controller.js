@@ -3,46 +3,26 @@
 let gElCanvas
 let gCtx
 let gStartPos
+let gSelector = 1
+
 const gTouchEvs = ['touchstart', 'touchmove', 'touchend']
 
-
+function renderTextBox(x, y, width, height) {
+    strHtml = `<div class="text-box" style="padding: 100px; width: 50px; height: 50px; 
+    position: absolute; border: 2px dashed rgb(126, 124, 124);"></div>`
+    document.querySelector('.meme-editor').innerHTML += strHtml
+}
 
 
 
 function renderMeme() {
-    const currMeme = getMeme()
-
-    let strHtml = `
-    <div class="meme-editor">
-    <canvas id="meme-canvas" width="500" height="500"></canvas>
-    <div class="control-box">
-        <label for="txt-line">
+    const currMeme = getMemeForEdit()
+    const memeEditor = document.querySelector('.meme-editor')
         //! fix issue with input, see comment on line 74, onTxtChange() 
-            <input oninput="onTxtChange(this.value)" type="text" placeholder="Write meme here">
-        </label>
-        <button class="move-left"></button>
-        <button class="move-up"></button>
-        <button class="move-down"></button>
-        <button class="move-right"></button>
-    </div>
-    </div>
-
-    `
-    const memeContainer = document.querySelector('.meme-container')
-    memeContainer.innerHTML = strHtml
+    memeEditor.classList.remove('hide')
 
 
-    if (memeContainer.classList.contains('hide')) {
-
-        memeContainer.classList.remove('hide')
-        memeContainer.classList.add('flex')
-
-    }
-    gElCanvas = document.querySelector('#meme-canvas')
-    gCtx = gElCanvas.getContext('2d')
     drawMeme(currMeme)
-
-
 
 }
 
@@ -54,30 +34,53 @@ function drawMeme(meme) {
     img.src = meme.img.url
     img.onload = () => {
         gCtx.drawImage(img, 0, 0, gElCanvas.width, gElCanvas.height);
-        drawText(gElCanvas.width / 2, gElCanvas.height / 10)
+        drawText(gElCanvas.width / 2, gElCanvas.height / 10, gElCanvas.width / 2, gElCanvas.height / 1.25)
     }
 
 }
 
-function drawText(x, y) {
+function drawText(x1, y1, x2, y2) {
     const infos = getMemeLines()
-    gCtx.font = `${infos.size}px Impact`
+    gCtx.font = `${infos.line1.size}px Impact`
     gCtx.textBaseline = 'middle'
-    gCtx.textAlign = infos.align
+    gCtx.textAlign = infos.line1.align
     gCtx.lineWidth = 2
     gCtx.fillStyle = 'white'
-    gCtx.font = '50px david'
-    gCtx.strokeStyle = infos.color
-    gCtx.strokeText(infos.txt, x, y)
+        // gCtx.font = '50px david'
+    gCtx.strokeStyle = infos.line1.color
+    gCtx.strokeText(infos.line1.txt, x1, y1)
+    gCtx.strokeText(infos.line2.txt, x2, y2)
 }
 
-//! fix issue with the input! worked with the renderMeme() on onInit(), now doesn't work
-//! issue most likely with gElCanvas and gCtx that are called from within renderMeme().
-//! need to figure out how to use these variables from outside the func (or possibly, check them with boolean)
+function onFontChange(diff) {
+    setSize(diff, gSelector)
+
+    renderMeme()
+}
+
+function onColorInput(val) {
+    setColor(val)
+    renderMeme()
+}
+
+
+
 function onTxtChange(val) {
 
-    setLineTxt(val)
+    setLineTxt(val, gSelector)
 
     renderMeme()
 
+}
+
+function onSwitch(elSwitch) {
+
+    elSwitch.classList.toggle('txt2')
+    resetTxtInput()
+
+    if (elSwitch.classList.contains('txt2')) {
+        gSelector = 2
+    } else {
+        gSelector = 1
+    }
 }

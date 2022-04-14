@@ -32,16 +32,24 @@ main .meme-editor .controls {
     grid-column: -2;
 }
 
+.switch-line::after {
+    content: '1';
+}
+
+.switch-line.txt2::after {
+    content: '2';
+}
+
 .control-box .move-left::before {
     content: '⬅️';
 }
 
-.control-box .move-up::before {
-    content: '⬆️';
+.control-box .increase-font::after {
+    content: '+';
 }
 
-.control-box .move-down::before {
-    content: '⬇️';
+.control-box .decrease-font::before {
+    content: '-';
 }
 
 .control-box .move-right::before {
