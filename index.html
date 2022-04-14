@@ -28,22 +28,24 @@
 
         <section class="meme-container">
             <div class="meme-editor hide">
+                <div class="canvas-container">
+                    <canvas id="meme-canvas" width="300" height="300"></canvas>
+                </div>
+                <div class="control-box grid">
+                    <input class="txt-input" oninput="onTxtChange(this.value)" type="text" placeholder="Write meme here">
 
-                <canvas id="meme-canvas" width="500" height="500"></canvas>
-
-                <div class="control-box">
-                    <label for="text">
-                        <input oninput="onTxtChange(this.value)" type="text" placeholder="Write meme here">
-                    </label>
-                    <input oninput="onColorInput(this.value)" type="color" name="txt-color" />
-                    <button onclick="onFontChange(5)" class="increase-font">A</button>
-                    <button onclick="onFontChange(-5)" class="decrease-font">A</button>
-                    <button onclick="onSwitch(this)" class="switch-line">switch-line</button>
+                    <input class="select color-input" oninput="onColorInput(this.value)" type="color" name="txt-color" />
+                    <button onclick="onFontChange(5)" class="select increase-font">A</button>
+                    <button onclick="onFontChange(-5)" class="select decrease-font">A</button>
+                    <button onclick="onSwitch(this)" class="select switch-line">switch-line</button>
+                    <button class="select download">
+                        <a href="#" onclick="onDownloadCanvas(this)" download="mymeme">download</a></button>
+                    <button class="select share">share</button>
 
                 </div>
             </div>
 
-            `
+
         </section>
 
     </main>

@@ -2,14 +2,18 @@
 const DIFF = 5
 
 
+//TODO  -$ # $ # $ # $ # $ # $- FUNCTION  ON INIT -$ # $ # $ # $ # $ # $- 
 function onInit() {
     renderGallery()
     getCanvas()
 
 
+
+
     // addEventListeners()
     // drawText('test', gElCanvas.width - 50, gElCanvas.height - 50)
 }
+//TODO  ############ FUNCTION  ON PAGE CHANGE ##################
 //?  FIXED THIS! IT WORKS func does not work, find the issue or find another way to implement
 function onPageChange(txt) {
     if (!document.querySelector('.gallery-container').classList.contains('hide')) return
@@ -19,7 +23,7 @@ function onPageChange(txt) {
         case 'Gallery':
             resetTxtInput()
             document.querySelector('.gallery-container').classList.remove('hide')
-            document.querySelector('.meme-editor').classList.add('hide')
+            removeMemeEditor()
             resetMeme()
 
             break
@@ -37,25 +41,45 @@ function onPageChange(txt) {
     }
 }
 
+
+
+//TODO  ##############  FUNCTION REMOVE EDITOR  ##############
+function removeMemeEditor() {
+    const elEditor = document.querySelector('.meme-editor')
+    elEditor.classList.remove('flex')
+    elEditor.classList.add('hide')
+}
 //! try to fix and use this func to add the event listeners to the HTML
 // function addEventListeners() {
 //    
 //      
 // }
 
+//TODO  ############ FUNCTION  RESET TXT INPUT ##################
 function resetTxtInput() {
     const txtInput = document.querySelector('[type="text"]')
     if (txtInput.value) txtInput.value = ''
 }
 
 
-function SelectedPage() {
+// function SelectedPage() {
 
-}
+// }
 
-
+//TODO  ############ FUNCTION  GET CANVAS ##################
 function getCanvas() {
     gElCanvas = document.querySelector('#meme-canvas')
     gCtx = gElCanvas.getContext('2d')
 
+}
+
+
+//TODO  ############ FUNCTION  RESIZE CANVAS ##################
+
+function resizeCanvas() {
+    var elContainer = document.querySelector('.canvas-container');
+    // Note: changing the canvas dimension this way clears the canvas
+    gElCanvas.width = elContainer.offsetWidth;
+    // Unless needed, better keep height fixed.
+    //   gCanvas.height = elContainer.offsetHeight
 }

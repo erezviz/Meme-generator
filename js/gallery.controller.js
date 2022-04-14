@@ -1,5 +1,6 @@
 'use strict'
 
+//TODO  ############ FUNCTION  RENDER GALLERY ##################
 function renderGallery() {
     let strHtmlOpener = '<div class="imgs-container grid">'
     let strHtmlCloser = '</div>'
@@ -12,7 +13,7 @@ function renderGallery() {
     document.querySelector('.gallery-container').innerHTML = strHtmlOpener + strHtmls.join('') + strHtmlCloser
 
 }
-
+//TODO  ############ FUNCTION  ON IMG SELECT ##################
 function onImgSelect(dataset, imgId) {
     setImg(imgId, dataset.lineIdx1, dataset.lineIdx2)
     document.querySelector('.gallery-container').classList.add('hide')

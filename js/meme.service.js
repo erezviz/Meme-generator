@@ -10,6 +10,7 @@ let gImgs = [
 ]
 let gMeme = createMeme()
 
+//TODO  ############ FUNCTION  CREATE MEME ##################
 function createMeme() {
     return {
         selectedImgId: 3,
@@ -29,6 +30,7 @@ function createMeme() {
     }
 }
 
+//TODO  ############ FUNCTION  SET IMG ##################
 function setImg(imgId, idx1, idx2) {
 
     gMeme.selectedImgId = imgId
@@ -36,26 +38,35 @@ function setImg(imgId, idx1, idx2) {
     gMeme.selectedLine.idx2 = idx2
 }
 
+//TODO  ############ FUNCTION  SET SIZE ##################
 function setSize(diff, selector) {
     let memeLines = getMemeLines()
     if (selector === 1) {
         memeLines.line1.size += diff
     } else {
+
         memeLines.line2.size += diff
     }
 }
 
 
-function setColor(color) {
+//TODO  ############ FUNCTION  SET COLOR ##################
+function setColor(color, colorSelect) {
     let memeLines = getMemeLines()
-    memeLines.color = color
+    if (colorSelect === 1) {
+        memeLines.line1.color = color
+    } else {
+        memeLines.line2.color = color
+    }
 }
 
+//TODO  ############ FUNCTION  GET LINE TEXT ##################
 function getLineText(txt) {
     return txt
 }
 
 
+//TODO  ############ FUNCTION  SET LINE TXT ##################
 function setLineTxt(newTxt, txtSelect) {
 
     const meme = getMemeForEdit()
@@ -79,13 +90,14 @@ function setLineTxt(newTxt, txtSelect) {
 //     }
 // }
 
+//TODO  ############ FUNCTION  GET MEME LINES ##################
 function getMemeLines() {
     return {
         line1: gMeme.lines[gMeme.selectedLine.idx1],
         line2: gMeme.lines[gMeme.selectedLine.idx2]
     }
 }
-
+//TODO  ############ FUNCTION  GET MEME FOR EDIT ##################
 function getMemeForEdit() {
     return {
         info: { line1: gMeme.lines[gMeme.selectedLine.idx1], line2: gMeme.lines[gMeme.selectedLine.idx2] },
@@ -93,15 +105,17 @@ function getMemeForEdit() {
     }
 }
 
+//TODO _#_#_#_#_# FUNCTION  _GET IMG BY ID #_#_#_#_#_#_
 function _getImgById(imgId) {
     return gImgs.find(img => img.id === imgId)
 }
 
+//TODO  ############ FUNCTION  GET IMGS ##################
 function getImgs() {
     return gImgs
 }
 
-
+//TODO  ############ FUNCTION  RESET MEME ##################
 function resetMeme() {
     gMeme = createMeme()
 }
