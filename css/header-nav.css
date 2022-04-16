@@ -1,20 +1,36 @@
 header {
-    /* display: flex; */
     background-color: #FDAF75;
     border-bottom: 3px solid #333C83;
-    /* height: 10vh; */
 }
 
-header .logo {
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+.logo {
+    font-family: 'teko', sans-serif;
     padding: 0 120px;
-    text-decoration: underline;
-    color: #00092C;
+    letter-spacing: 0.8px;
+    color: #333C83;
 }
 
-nav ul li {
+.logo span.o-1 {
+    color: #F900BF;
+}
+
+.logo span.o-2 {
+    color: #8479E1;
+}
+
+nav ul li.nav-select {
     height: 1em;
     color: #F24A72;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #F24A72;
+}
+
+nav ul li a:hover {
+    color: rgba(68, 95, 95, 0.457);
+    cursor: pointer;
 }
 
 nav ul li:hover {
@@ -23,7 +39,6 @@ nav ul li:hover {
 }
 
 .main-nav .nav-select {
-    /* display: block; */
     line-height: 75px;
     height: 75px;
     width: 8.4375rem;

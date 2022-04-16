@@ -1,26 +1,19 @@
 'use strict'
 
-
-
-//TODO  -$ # $ # $ # $ # $ # $- FUNCTION  ON INIT -$ # $ # $ # $ # $ # $- 
+//*  -$ # $ # $ # $ # $ # $- FUNCTION  ON INIT -$ # $ # $ # $ # $ # $- 
 function onInit() {
     renderGallery()
     getCanvas()
-        // addListenenrs()
+
     manageResizeCanvas()
     window.addEventListener('resize', manageResizeCanvas)
-        // const meme = getMemeForEdit()
-        // drawMeme(meme)
-
-    // addEventListeners()
-
 }
 
 
-//TODO  ############ FUNCTION  ON PAGE CHANGE ##################
+//*  ############ FUNCTION  ON PAGE CHANGE ##################
 function onPageChange(txt) {
     if (!document.querySelector('.gallery-container').classList.contains('hide')) return
-    const userConfirm = confirm('Exiting the editor will discard your changes, are you sure?') // Try and Make a modal later
+    const userConfirm = confirm('Exiting the editor will discard your changes, are you sure?')
     if (!userConfirm) return
     switch (txt) {
         case 'Gallery':
@@ -45,21 +38,14 @@ function onPageChange(txt) {
     }
 }
 
-
-
-//TODO  ##############  FUNCTION REMOVE EDITOR  ##############
+//*  ##############  FUNCTION REMOVE EDITOR  ##############
 function removeMemeEditor() {
     const elEditor = document.querySelector('.meme-editor')
     elEditor.classList.remove('flex')
     elEditor.classList.add('hide')
 }
-//! try to fix and use this func to add the event listeners to the HTML
-// function addEventListeners() {
-//    
-//      
-// }
 
-//TODO  ############ FUNCTION  RESET TXT INPUT ##################
+//*  ############ FUNCTION  RESET TXT INPUT ##################
 function resetTxtInput() {
     const txtInput = document.querySelector('[type="text"]')
     if (txtInput.value) txtInput.value = ''
@@ -68,7 +54,7 @@ function resetTxtInput() {
 
 
 
-//TODO  ############ FUNCTION  GET CANVAS ##################
+//*  ############ FUNCTION  GET CANVAS ##################
 function getCanvas() {
     gElCanvas = document.querySelector('#meme-canvas')
     gCtx = gElCanvas.getContext('2d')
@@ -76,39 +62,33 @@ function getCanvas() {
 }
 
 
-//TODO  ############ FUNCTION  RESIZE CANVAS ##################
-
-// function resizeCanvas() {
-//     var elContainer = document.querySelector('.canvas-container');
-// Note: changing the canvas dimension this way clears the canvas
-//     gElCanvas.width = elContainer.offsetWidth;
-// Unless needed, better keep height fixed.
-//   gCanvas.height = elContainer.offsetHeight
-// }
+//*  ############ FUNCTION MANAGE RESIZE CANVAS ##################
 
 function manageResizeCanvas() {
 
     const vw = Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0)
-        // console.log(vw)
 
     if (vw <= 320) {
         resizeCanvas(150, 150)
-            // const elContainer = document.querySelector('.canvas-container')
 
-    } else if (vw > 320 && vw < 500) {
+
+    } else if (vw > 320 && vw < 450) {
         resizeCanvas(190, 190)
+    } else if (vw > 450 && vw < 500) {
+        resizeCanvas(220, 220)
+
     } else if (vw > 500 && vw < 600) {
         resizeCanvas(250, 250)
     } else if (vw > 600 && vw < 700) {
         resizeCanvas(300, 300)
-    } else if (vw > 700 && vw < 800) {
+    } else if (vw > 700 && vw < 1000) {
         resizeCanvas(350, 350)
     } else {
         resizeCanvas(400, 400)
     }
 }
 
-
+//*  ############ FUNCTION  RESIZE CANVAS ##################
 function resizeCanvas(x, y) {
     gElCanvas.width = x
     gElCanvas.height = y

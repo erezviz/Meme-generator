@@ -13,22 +13,17 @@
 <body onload="onInit()">
     <header>
         <section class="container flex">
-            <h1 class="logo flex-1">Memeoo</h1>
+            <h1 class="logo flex-1">Meme<span class="o-1">o</span><span class="o-2">o</span></h1>
             <nav>
                 <ul class="main-nav clean-list flex align-center">
-                    <!-- $$$$$$$   FOUND A FIX!! HORRAY!!!   $$$$$$$-->
                     <li class="nav-select" onclick="onPageChange(this.textContent)">Gallery</li>
-                    <li class="nav-select">Memes</li>
-                    <!-- <li class="nav-select">About</li> -->
+                    <li class="nav-select "><a class="nav-select" href="http://www.linkedin.com/in/erez-wiezel" target="_blank">About</a> </li>
                 </ul>
             </nav>
         </section>
     </header>
-
     <main>
-
         <section class=" container gallery-container main-wrapper"></section>
-
         <section class=" container meme-container flex main-wrapper space-between">
             <div class="container meme-editor hide">
                 <div class="canvas-container">
@@ -36,7 +31,6 @@
                 </div>
                 <div class="control-box grid">
                     <input class="txt-input" oninput="onTxtChange(this.value)" type="text" placeholder="Write meme here">
-
                     <input class="select color-input" oninput="onColorInput(this.value)" type="color" name="txt-color" />
                     <button onclick="onFontSizeChange(5)" class="select increase-font">A</button>
                     <button onclick="onFontSizeChange(-5)" class="select decrease-font">A</button>
@@ -48,25 +42,17 @@
                     </select>
                     <button class="select download"> 
                         <a  href="#" onclick="onDownloadCanvas(this)" download="mymeme">download</a></button>
-                    <button onclick="uploadImg(this.value)" class="select share">Share</button>
-                    <button class="select bakimer" onclick="uploadImg(this.value)">Send for Authorization</button>
+                    <button onclick="uploadImgB(this)" class="select share">Share</button>
+                    <button class="select bakimer" onclick="uploadImgA(this)">Send for Authorization</button>
                 </div>
-
-
             </div>
-
-
         </section>
-
     </main>
     <footer>
         <section class="container flex justify-center align-center">
-            <h2 class="logo">Memeoo</h2>
+            <h2 class="logo">Meme<span class="o-1">o</span><span class="o-2">o</span></h2>
         </section>
     </footer>
-
-
-    <script src="js/storage.service.js"></script>
     <script src="js/upload.service.js"></script>
     <script src="js/meme.service.js"></script>
     <script src="js/meme.controller.js"></script>

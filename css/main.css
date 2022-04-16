@@ -14,12 +14,12 @@ body {
 main {
     padding-bottom: 10px;
     padding-top: 10px;
-    /* height: 80vh; */
+    height: 80vh;
 }
 
 .main-wrapper {
-    border-left: 0.5px solid #333C83;
-    border-right: 0.5px solid #333C83;
+    border-left: 0.5px solid #DFDFDE;
+    border-right: 0.5px solid #DFDFDE;
 }
 
 .selected {
@@ -27,7 +27,10 @@ main {
 }
 
 footer {
+    font-family: 'teko', sans-serif;
     background-color: #FDAF75;
     border-top: 3px solid #333C83;
-    /* height: 10vh; */
+    position: fixed;
+    width: 100%;
+    bottom: 0;
 }

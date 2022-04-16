@@ -1,12 +1,6 @@
 'use strict'
-const IMG_KEY = 'imagesDB'
-const MEME_KEY = 'memeDB'
+
 const ImageCount = 20
-    // const fonts = {
-    //     impact: 'Impact',
-    //     arial: 'Arial',
-    //     georgia: 'Georgia'
-    // }
 
 let gImgs = createImages()
 let gMeme = createMeme()
@@ -25,7 +19,6 @@ function createMeme() {
     return {
         selectedImgId: 3,
         selectedLine: { idx1: 0, idx2: 1 },
-        // selectedLine2Idx: 1,
         lines: _createMemeLines()
 
     }

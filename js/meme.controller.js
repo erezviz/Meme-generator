@@ -2,31 +2,21 @@
 
 let gElCanvas
 let gCtx
-let gStartPos
 let gSelector = 1
 
-// const gTouchEvs = ['touchstart', 'touchmove', 'touchend']
 
-//TODO  ############ FUNCTION RENDER TEXT BOX - STILL NEEDS WORK ##################
-function renderTextBox(x, y, width, height) {
-    strHtml = `<div class="text-box" style="padding: 100px; width: 50px; height: 50px; 
-    position: absolute; border: 2px dashed rgb(126, 124, 124);"></div>`
-    document.querySelector('.meme-editor').innerHTML += strHtml
-}
-
-//TODO  ############ FUNCTION RENDER MEME ##################
+//*  ############ FUNCTION RENDER MEME ##################
 function renderMeme() {
     const currMeme = getMemeForEdit()
     const memeEditor = document.querySelector('.meme-editor')
-        //! fix issue with input, see comment on line 74, onTxtChange() 
+
     memeEditor.classList.remove('hide')
 
     if (!memeEditor.classList.contains('flex')) memeEditor.classList.add('flex')
-        // resizeCanvas()
     drawMeme(currMeme)
 }
 
-//TODO  ############ FUNCTION DRAW MEME ##################
+//*  ############ FUNCTION DRAW MEME ##################
 function drawMeme(meme) {
     const infos = getMemeLines()
     let img = new Image()
@@ -37,9 +27,9 @@ function drawMeme(meme) {
     }
 }
 
-//TODO  ############ FUNCTION DRAW TEXT ##################
+//*  ############ FUNCTION DRAW TEXT ##################
 function drawText(infos, x1, y1, x2, y2) {
-    // SETTINGS FOR LINE1 :
+    //? SETTINGS FOR LINE1 :
     gCtx.font = `${infos.line1.size}px ${infos.line1.font}`
     gCtx.textBaseline = 'middle'
     gCtx.textAlign = infos.line1.align
@@ -47,7 +37,7 @@ function drawText(infos, x1, y1, x2, y2) {
     gCtx.fillStyle = 'white'
     gCtx.strokeStyle = infos.line1.color
     gCtx.strokeText(infos.line1.txt, x1, y1)
-        // SETTINGS FOR LINE2 :
+        //? SETTINGS FOR LINE2 :
     gCtx.strokeStyle = infos.line2.color
     gCtx.font = `${infos.line2.size}px ${infos.line2.font}`
     gCtx.textBaseline = 'middle'
@@ -63,25 +53,25 @@ function onFontSelect(val) {
     renderMeme()
 
 }
-//TODO  ############ FUNCTION ON FONT CHANGE ##################
+//*  ############ FUNCTION ON FONT CHANGE ##################
 function onFontSizeChange(diff) {
     setSize(diff, gSelector)
     renderMeme()
 }
 
-//TODO  ############ FUNCTION ON COLOR INPUT ##################
+//*  ############ FUNCTION ON COLOR INPUT ##################
 function onColorInput(val) {
     setColor(val, gSelector)
     renderMeme()
 }
 
-//TODO  ############ FUNCTION ON TXT CHANGE ##################
+//*  ############ FUNCTION ON TXT CHANGE ##################
 function onTxtChange(val) {
     setLineTxt(val, gSelector)
     renderMeme()
 }
 
-//TODO  ############ FUNCTION ON SWITCH ##################
+//*  ############ FUNCTION ON SWITCH ##################
 function onSwitch(elSwitch) {
 
     elSwitch.classList.toggle('txt2')
@@ -95,7 +85,7 @@ function onSwitch(elSwitch) {
 }
 
 
-//TODO  ############ FUNCTION ON DOWNLOAD CANVAS ##################
+//*  ############ FUNCTION ON DOWNLOAD CANVAS ##################
 function onDownloadCanvas(elLink) {
 
     const data = gElCanvas.toDataURL();

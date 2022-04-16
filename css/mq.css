@@ -1,6 +1,13 @@
+@media (max-width: 315px) {
+    .logo {
+        padding: 0;
+    }
+}
+
 @media (min-width: 315px) {
     .container {
         max-width: 100%;
+        min-width: 325px;
     }
     header .logo {
         padding: 0 5px;
@@ -8,26 +15,35 @@
     .main-nav .nav-select {
         width: 7rem;
     }
-    /* footer {
-        position: fixed;
-        bottom: 0;
-        padding: 10px ;
-        text-align: center;
-    }
-    footer>section.container.flex {
-        justify-content: normal;
-        align-items: stretch;
-        display: block;
-    } */
 }
 
 @media (max-width: 500px) {
+    .container {
+        max-width: 430px;
+    }
     .container.meme-editor.flex {
         flex-direction: column;
         align-items: center;
+        width: 65vw;
     }
     main .meme-editor .canvas-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
         padding-right: 0;
         height: 38vh;
+        width: 65vw;
+    }
+}
+
+@media (min-width: 980px) {
+    .container {
+        width: 800px;
+    }
+    main .meme-editor .canvas-container {
+        height: 50vh;
+    }
+    .container.meme-editor.flex {
+        justify-content: space-evenly;
     }
 }
