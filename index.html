@@ -5,31 +5,34 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="icons/glasses-icon.ico" type="image/x-icon">
     <link rel="stylesheet" href="css/styles.css">
     <title>Memeoo | Erez Wiezel</title>
 </head>
 
 <body onload="onInit()">
     <header>
-        <h1 class="logo">Memeoo</h1>
-        <nav>
-            <ul>
-                <!-- $$$$$$$   FOUND A FIX!! HORRAY!!!   $$$$$$$-->
-                <li class="nav-select" onclick="onPageChange(this.textContent)">Gallery</li>
-                <li class="nav-select memes">Memes</li>
-                <li class="nav-select">About</li>
-            </ul>
-        </nav>
+        <section class="container flex">
+            <h1 class="logo flex-1">Memeoo</h1>
+            <nav>
+                <ul class="main-nav clean-list flex align-center">
+                    <!-- $$$$$$$   FOUND A FIX!! HORRAY!!!   $$$$$$$-->
+                    <li class="nav-select" onclick="onPageChange(this.textContent)">Gallery</li>
+                    <li class="nav-select">Memes</li>
+                    <!-- <li class="nav-select">About</li> -->
+                </ul>
+            </nav>
+        </section>
     </header>
 
     <main>
 
-        <section class="gallery-container"></section>
+        <section class=" container gallery-container main-wrapper"></section>
 
-        <section class="meme-container">
-            <div class="meme-editor hide">
+        <section class=" container meme-container flex main-wrapper space-between">
+            <div class="container meme-editor hide">
                 <div class="canvas-container">
-                    <canvas id="meme-canvas" width="300" height="300"></canvas>
+                    <canvas id="meme-canvas" width="400" height="400"></canvas>
                 </div>
                 <div class="control-box grid">
                     <input class="txt-input" oninput="onTxtChange(this.value)" type="text" placeholder="Write meme here">
@@ -38,7 +41,7 @@
                     <button onclick="onFontSizeChange(5)" class="select increase-font">A</button>
                     <button onclick="onFontSizeChange(-5)" class="select decrease-font">A</button>
                     <button onclick="onSwitch(this)" class="select switch-line">switch-line</button>
-                    <select onchange="onFontSelect(this.value)" class="font" name="fonts">
+                    <select onchange="onFontSelect(this.value)" class="font-select" name="fonts">
                         <option  value="impact">IMPACT</option>
                         <option value="arial">Arial</option>
                         <option value="Georgia">Georgia</option>
@@ -56,6 +59,11 @@
         </section>
 
     </main>
+    <footer>
+        <section class="container flex justify-center align-center">
+            <h2 class="logo">Memeoo</h2>
+        </section>
+    </footer>
 
 
     <script src="js/storage.service.js"></script>

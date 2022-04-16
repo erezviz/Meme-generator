@@ -20,6 +20,7 @@ function renderMeme() {
     const memeEditor = document.querySelector('.meme-editor')
         //! fix issue with input, see comment on line 74, onTxtChange() 
     memeEditor.classList.remove('hide')
+
     if (!memeEditor.classList.contains('flex')) memeEditor.classList.add('flex')
         // resizeCanvas()
     drawMeme(currMeme)

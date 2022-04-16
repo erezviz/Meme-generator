@@ -1,12 +1,15 @@
 main .gallery-container {
-    /* background-color: antiquewhite; */
-    width: 80%;
-    /* height: 80vh; */
+    background-color: #9800f03e;
+    /* border-left: 0.5px solid #333C83;
+    border-right: 0.5px solid #333C83; */
+    padding: 10px 0;
+    /* width: 80%; */
+    /* height: 100%; */
 }
 
 main .imgs-container.grid {
     /* display: grid; */
-    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(11.25rem, 1fr));
     grid-gap: 5px;
     justify-content: center;
     justify-items: center;
@@ -15,7 +18,7 @@ main .imgs-container.grid {
 main .imgs-container>* {
     border-radius: 8px;
     display: flex;
-    height: 150px;
+    height: 9.375rem;
     border: 1px solid black;
     justify-content: center;
 }

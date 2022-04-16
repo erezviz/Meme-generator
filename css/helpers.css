@@ -9,3 +9,33 @@
 .flex {
     display: flex;
 }
+
+.flex-1 {
+    flex: 1;
+}
+
+
+/* Layout */
+
+.container {
+    max-width: 980px;
+    margin: 0 auto;
+}
+
+.clean-list {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.align-center {
+    align-items: center;
+}
+
+.justify-center {
+    justify-content: center;
+}
+
+.space-between {
+    justify-content: space-between;
+}

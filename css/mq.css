@@ -1,1 +1,33 @@
-@media (min-width: 800px) {}
+@media (min-width: 315px) {
+    .container {
+        max-width: 100%;
+    }
+    header .logo {
+        padding: 0 5px;
+    }
+    .main-nav .nav-select {
+        width: 7rem;
+    }
+    /* footer {
+        position: fixed;
+        bottom: 0;
+        padding: 10px ;
+        text-align: center;
+    }
+    footer>section.container.flex {
+        justify-content: normal;
+        align-items: stretch;
+        display: block;
+    } */
+}
+
+@media (max-width: 500px) {
+    .container.meme-editor.flex {
+        flex-direction: column;
+        align-items: center;
+    }
+    main .meme-editor .canvas-container {
+        padding-right: 0;
+        height: 38vh;
+    }
+}

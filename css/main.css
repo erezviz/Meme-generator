@@ -2,18 +2,32 @@
     box-sizing: border-box;
 }
 
-body {
+html {
     font-family: sans-serif;
 }
 
+body {
+    margin: 0;
+    background-color: #DDDDDD;
+}
+
 main {
-    height: 80vh;
-    display: flex;
-    justify-content: center;
-    align-items: baseline;
-    margin: 0 auto;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    /* height: 80vh; */
+}
+
+.main-wrapper {
+    border-left: 0.5px solid #333C83;
+    border-right: 0.5px solid #333C83;
 }
 
 .selected {
     box-shadow: inset 0px -6px 0 grey;
+}
+
+footer {
+    background-color: #FDAF75;
+    border-top: 3px solid #333C83;
+    /* height: 10vh; */
 }

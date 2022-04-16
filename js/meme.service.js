@@ -1,7 +1,7 @@
 'use strict'
 const IMG_KEY = 'imagesDB'
 const MEME_KEY = 'memeDB'
-const ImageCount = 18
+const ImageCount = 20
     // const fonts = {
     //     impact: 'Impact',
     //     arial: 'Arial',
