@@ -35,14 +35,21 @@
                     <input class="txt-input" oninput="onTxtChange(this.value)" type="text" placeholder="Write meme here">
 
                     <input class="select color-input" oninput="onColorInput(this.value)" type="color" name="txt-color" />
-                    <button onclick="onFontChange(5)" class="select increase-font">A</button>
-                    <button onclick="onFontChange(-5)" class="select decrease-font">A</button>
+                    <button onclick="onFontSizeChange(5)" class="select increase-font">A</button>
+                    <button onclick="onFontSizeChange(-5)" class="select decrease-font">A</button>
                     <button onclick="onSwitch(this)" class="select switch-line">switch-line</button>
-                    <button class="select download">
-                        <a href="#" onclick="onDownloadCanvas(this)" download="mymeme">download</a></button>
-                    <button class="select share">share</button>
-
+                    <select onchange="onFontSelect(this.value)" class="font" name="fonts">
+                        <option  value="impact">IMPACT</option>
+                        <option value="arial">Arial</option>
+                        <option value="Georgia">Georgia</option>
+                    </select>
+                    <button class="select download"> 
+                        <a  href="#" onclick="onDownloadCanvas(this)" download="mymeme">download</a></button>
+                    <button onclick="uploadImg(this.value)" class="select share">Share</button>
+                    <button class="select bakimer" onclick="uploadImg(this.value)">Send for Authorization</button>
                 </div>
+
+
             </div>
 
 
@@ -52,6 +59,7 @@
 
 
     <script src="js/storage.service.js"></script>
+    <script src="js/upload.service.js"></script>
     <script src="js/meme.service.js"></script>
     <script src="js/meme.controller.js"></script>
     <script src="js/gallery.controller.js"></script>

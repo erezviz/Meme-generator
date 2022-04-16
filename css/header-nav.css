@@ -6,6 +6,11 @@ header {
     justify-content: space-between;
 }
 
+header .logo {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-decoration: underline;
+}
+
 nav ul {
     display: flex;
     list-style: none;

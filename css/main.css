@@ -1,8 +1,17 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: sans-serif;
+}
+
 main {
     height: 80vh;
     display: flex;
     justify-content: center;
     align-items: baseline;
+    margin: 0 auto;
 }
 
 .selected {

@@ -1,36 +1,47 @@
 'use strict'
 const IMG_KEY = 'imagesDB'
 const MEME_KEY = 'memeDB'
-let gKeywordSearchCountMap = { 'funny': 12, 'cat': 16, 'baby': 2 }
-let gImgs = [
-    { id: 1, url: 'meme-imgs-square/1.jpg', keywords: ['funny', 'cat'] },
-    { id: 2, url: 'meme-imgs-square/2.jpg', keywords: ['funny', 'cat'] },
-    { id: 3, url: 'meme-imgs-square/3.jpg', keywords: ['funny', 'cat'] },
-    { id: 4, url: 'meme-imgs-square/4.jpg', keywords: ['funny', 'cat'] }
-]
+const ImageCount = 18
+    // const fonts = {
+    //     impact: 'Impact',
+    //     arial: 'Arial',
+    //     georgia: 'Georgia'
+    // }
+
+let gImgs = createImages()
 let gMeme = createMeme()
 
-//TODO  ############ FUNCTION  CREATE MEME ##################
+//*  ############ FUNCTION  CREATE IMGS ##################
+function createImages() {
+    let imgs = []
+    for (let i = 0; i < ImageCount; i++) {
+        const img = { id: i + 1, url: `meme-imgs-square/${i+1}.jpg`, }
+        imgs.push(img)
+    }
+    return imgs
+}
+//*  ############ FUNCTION  CREATE MEME ##################
 function createMeme() {
     return {
         selectedImgId: 3,
         selectedLine: { idx1: 0, idx2: 1 },
         // selectedLine2Idx: 1,
-        lines: [
-            { txt: 'Meme goes here1', size: 20, align: 'center', color: 'red' },
-            { txt: 'Meme goes here2', size: 20, align: 'center', color: 'red' },
-            { txt: 'Meme goes here3', size: 20, align: 'center', color: 'red' },
-            { txt: 'Meme goes here4', size: 20, align: 'center', color: 'red' },
-            { txt: 'Meme goes here5', size: 20, align: 'center', color: 'red' },
-            { txt: 'Meme goes here6', size: 20, align: 'center', color: 'red' },
-            { txt: 'Meme goes here7', size: 20, align: 'center', color: 'red' },
-            { txt: 'Meme goes here8', size: 20, align: 'center', color: 'red' },
-        ]
+        lines: _createMemeLines()
 
     }
 }
 
-//TODO  ############ FUNCTION  SET IMG ##################
+//*  ############ FUNCTION  CREATE MEME LINES ##################
+function _createMemeLines() {
+    let lines = []
+    for (let i = 0; i < ImageCount * 2; i++) {
+        const line = { txt: 'Your meme goes here', size: 20, align: 'center', color: 'red', font: 'Impact' }
+        lines.push(line)
+    }
+    return lines
+}
+
+//*  ############ FUNCTION  SET IMG ##################
 function setImg(imgId, idx1, idx2) {
 
     gMeme.selectedImgId = imgId
@@ -38,7 +49,7 @@ function setImg(imgId, idx1, idx2) {
     gMeme.selectedLine.idx2 = idx2
 }
 
-//TODO  ############ FUNCTION  SET SIZE ##################
+//*  ############ FUNCTION  SET SIZE ##################
 function setSize(diff, selector) {
     let memeLines = getMemeLines()
     if (selector === 1) {
@@ -48,9 +59,18 @@ function setSize(diff, selector) {
         memeLines.line2.size += diff
     }
 }
+//*  ############ FUNCTION  SET FONT ##################
+function setFont(val, selector) {
+    let memeLines = getMemeLines()
+    if (selector === 1) {
+        memeLines.line1.font = val
+    } else {
+        memeLines.line2.font = val
+    }
+}
 
 
-//TODO  ############ FUNCTION  SET COLOR ##################
+//*  ############ FUNCTION  SET COLOR ##################
 function setColor(color, colorSelect) {
     let memeLines = getMemeLines()
     if (colorSelect === 1) {
@@ -60,13 +80,13 @@ function setColor(color, colorSelect) {
     }
 }
 
-//TODO  ############ FUNCTION  GET LINE TEXT ##################
+//*  ############ FUNCTION  GET LINE TEXT ##################
 function getLineText(txt) {
     return txt
 }
 
 
-//TODO  ############ FUNCTION  SET LINE TXT ##################
+//*  ############ FUNCTION  SET LINE TXT ##################
 function setLineTxt(newTxt, txtSelect) {
 
     const meme = getMemeForEdit()
@@ -78,26 +98,15 @@ function setLineTxt(newTxt, txtSelect) {
     }
 }
 
-// function createImages(){
-//     gImgs = loadFromStorage(IMG_KEY)
-//     if(!gImgs){
-//         gImgs = new Array(ImageCount)
-//         gImgs.forEach(img=> {
 
-//         })
-
-
-//     }
-// }
-
-//TODO  ############ FUNCTION  GET MEME LINES ##################
+//*  ############ FUNCTION  GET MEME LINES ##################
 function getMemeLines() {
     return {
         line1: gMeme.lines[gMeme.selectedLine.idx1],
         line2: gMeme.lines[gMeme.selectedLine.idx2]
     }
 }
-//TODO  ############ FUNCTION  GET MEME FOR EDIT ##################
+//*  ############ FUNCTION  GET MEME FOR EDIT ##################
 function getMemeForEdit() {
     return {
         info: { line1: gMeme.lines[gMeme.selectedLine.idx1], line2: gMeme.lines[gMeme.selectedLine.idx2] },
@@ -105,17 +114,17 @@ function getMemeForEdit() {
     }
 }
 
-//TODO _#_#_#_#_# FUNCTION  _GET IMG BY ID #_#_#_#_#_#_
+//* ########### FUNCTION  _GET IMG BY ID ############
 function _getImgById(imgId) {
     return gImgs.find(img => img.id === imgId)
 }
 
-//TODO  ############ FUNCTION  GET IMGS ##################
+//*  ############ FUNCTION  GET IMGS ##################
 function getImgs() {
     return gImgs
 }
 
-//TODO  ############ FUNCTION  RESET MEME ##################
+//*  ############ FUNCTION  RESET MEME ##################
 function resetMeme() {
     gMeme = createMeme()
 }

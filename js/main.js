@@ -1,18 +1,19 @@
 'use strict'
-const DIFF = 5
+
 
 
 //TODO  -$ # $ # $ # $ # $ # $- FUNCTION  ON INIT -$ # $ # $ # $ # $ # $- 
 function onInit() {
     renderGallery()
     getCanvas()
-
+        // addListenenrs()
 
 
 
     // addEventListeners()
-    // drawText('test', gElCanvas.width - 50, gElCanvas.height - 50)
+
 }
+
 //TODO  ############ FUNCTION  ON PAGE CHANGE ##################
 //?  FIXED THIS! IT WORKS func does not work, find the issue or find another way to implement
 function onPageChange(txt) {
@@ -24,6 +25,7 @@ function onPageChange(txt) {
             resetTxtInput()
             document.querySelector('.gallery-container').classList.remove('hide')
             removeMemeEditor()
+            resetUploadBtn()
             resetMeme()
 
             break
@@ -62,9 +64,7 @@ function resetTxtInput() {
 }
 
 
-// function SelectedPage() {
 
-// }
 
 //TODO  ############ FUNCTION  GET CANVAS ##################
 function getCanvas() {

@@ -1,11 +1,13 @@
-.meme-editor {
+.meme-container {
+    margin: 0 auto;
+}
+
+.meme-editor.flex {
     justify-content: space-evenly;
-    align-items: center;
-    height: 28.375rem;
-    /* POSSIBLE USE FOR MOBILE \/ */
-    /* height: 53.125em; */
-    /* min-width: 34.375rem; */
-    width: 40rem;
+    /* align-items: center; */
+    padding: 25px;
+    /* height: 28.375rem; */
+    width: 980px;
     background-color: rgb(223, 155, 9);
     border-radius: 5px;
 }
@@ -16,13 +18,12 @@ main .meme-editor canvas {
 }
 
 main .meme-editor .control-box.grid {
-    height: 14em;
-    grid-template-columns: repeat(4, 50px);
-    grid-template-rows: repeat(4, 50px);
-    /* grid-template-areas: ". txt txt txt .  " "increase  decrease . switchline " "clor clor clor . save " "download download . share "; */
+    height: 17.5em;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(5, 1fr);
     grid-gap: 5px;
-    /* justify-items: center; */
-    /* align-self: center; */
+    /* border: 5px solid black; */
+    border-radius: 5px;
 }
 
 .switch-line::after {
@@ -48,19 +49,27 @@ main .meme-editor .control-box.grid {
 }
 
 .meme-editor .select:hover {
-    border: 1px solid rgb(136, 36, 0);
-    background-color: rgba(255, 68, 0, 0.826);
-    color: rgb(25, 189, 19);
+    /* border: 0.2px solid rgb(136, 36, 0); */
+    background-color: rgba(255, 68, 0, 0.546);
+    color: #000000;
     cursor: pointer;
 }
 
 .control-box.grid .switch-line {
     grid-row: 3;
-    grid-column: 2/4;
+    grid-column: span 2;
+}
+
+.control-box.grid .font {
+    grid-row: 3;
+    grid-column: 3/-1;
+    height: min-content;
+    align-self: center;
 }
 
 .control-box.grid .txt-input {
     grid-column: 1/-1;
+    border-radius: 5px;
 }
 
 .control-box.grid .color-input {
@@ -70,12 +79,6 @@ main .meme-editor .control-box.grid {
     align-self: center;
 }
 
-.control-box.grid .increase-font {
-    /* grid-row: 3;
-    grid-column: 1; */
-    /* grid-area: increase; */
-}
-
 .control-box.grid .decrease-font {
     /* grid-area: decrease; */
     grid-column: 1;
@@ -83,22 +86,55 @@ main .meme-editor .control-box.grid {
 }
 
 .control-box.grid .download>a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.control-box.grid .download>a:hover {
     text-decoration: none;
 }
 
 .control-box.grid .download {
     /* grid-area: download; */
     grid-row: 4;
+    background-color: blueviolet;
+    color: #f8f8f8;
     grid-column: 1/3;
 }
 
+.control-box.grid .download:hover {
+    background-color: rgba(137, 43, 226, 0.6);
+}
+
 .control-box.grid .share {
+    background-color: rgb(48, 68, 164);
+    color: #f8f8f8;
     /* grid-area: share; */
     grid-row: 4;
     grid-column: -3/-1;
 }
 
+.control-box.grid .share:hover {
+    background-color: rgba(48, 67, 164, 0.658);
+}
+
+.control-box.grid .bakimer {
+    grid-row: 5;
+    grid-column: 1/-1;
+    background-color: rgb(62, 171, 11);
+    color: gold;
+}
+
+.control-box.grid .bakimer:hover {
+    background-color: rgba(62, 171, 11, 0.667);
+}
+
 .canvas-container {
     /* width: 50%;
     height: 85%; */
+}
+
+.control-box.grid .share>a:hover {
+    background-color: rgb(44, 64, 160);
+    color: #f8f8f8;
 }
